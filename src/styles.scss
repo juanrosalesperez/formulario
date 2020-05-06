@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+//COLORES
+$white: #ffffff;
+$grey: #999999;
+$black: #111;
+$red: rgb(252, 57, 57);
+$green: #1b9282;
+$blue: #0099ff;
+$blue-dark: #026fb8;
+$blue-light: #53b8fc;
+
+// MIXIN
+
+@mixin elemt-form {
+  border-radius: 5px;
+  border: 1px solid $grey;
+  margin-bottom: 15px;
+  width: 75%;
+  height: 3vh;
+  float: left;
+  padding: 0px 15px;
+}
+@mixin icon-form {
+  width: 35px;
+  float: left;
+  border-radius: 5px 0px 0px 5px;
+  height: 42px;
+  position: relative;
+  text-align: center;
+  line-height: 40px;
+}

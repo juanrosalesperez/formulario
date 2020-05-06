@@ -1,0 +1,286 @@
+<!-- MODAL USER -->
+<div>
+  <ng-template #item let-modal>
+    <div class="mi-modal">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="modal.dismiss('Cross click')"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <div class="input-group">
+              <form
+                class="formNew"
+                [formGroup]="userForm"
+                (ngSubmit)="guardar()"
+              >
+                <h1 class="formNew_h1">
+                  Regístrese como nuevo usuario
+                </h1>
+
+                <div class="contentform">
+                  <div class="leftcontact">
+                    <div class="form-group">
+                      <p>País</p>
+                      <span class="icon-case"><i class="fa fa-globe"></i></span>
+
+                      <select
+                        type="text"
+                        name="pais"
+                        id="pais"
+                        formControlName="pais"
+                      >
+                        <option *ngFor="let pais of paises" [ngValue]="pais">
+                          {{ pais }}
+                        </option>
+                      </select>
+
+                      <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <p>
+                        Tipo de persona<span
+                          *ngIf="userForm.hasError('required', 'tipo')"
+                          >*</span
+                        >
+                      </p>
+                      <span class="icon-case"><i class="fa fa-tasks"></i></span>
+
+                      <select
+                        type="text"
+                        name="tipo"
+                        id="tipo"
+                        formControlName="tipo"
+                        (change)="selectTipo($event.target.value)"
+                      >
+                        <option selected value="0">Física</option>
+                        <option value="1">Jurídica</option>
+                      </select>
+
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group" *ngIf="tipoPersona === 1">
+                      <p>
+                        Nombre de la sociedad
+                      </p>
+                      <span class="icon-case"
+                        ><i class="fa fa-copyright"></i
+                      ></span>
+                      <input
+                        type="text"
+                        name="sociedad"
+                        id="sociedad"
+                        formControlName="sociedad"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group" *ngIf="tipoPersona === 0">
+                      <p>
+                        Nombre
+                      </p>
+                      <span class="icon-case"><i class="fa fa-users"></i></span>
+                      <input
+                        type="text"
+                        name="nombre"
+                        id="nombre"
+                        data-rule="required"
+                        formControlName="nombre"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group" *ngIf="tipoPersona === 0">
+                      <p>Apellidos</p>
+                      <span class="icon-case"><i class="fa fa-user"></i></span>
+                      <input
+                        type="text"
+                        name="apellido"
+                        id="apellido"
+                        data-rule="required"
+                        formControlName="apellido"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group" *ngIf="tipoPersona == 0">
+                      <p>
+                        NIF - NIE
+                        <span *ngIf="userForm.hasError('required', 'documento')"
+                          >*</span
+                        >
+                      </p>
+                      <span class="icon-case"
+                        ><i class="fa fa-id-badge"></i
+                      ></span>
+                      <input
+                        type="text"
+                        name="documento"
+                        id="documento"
+                        formControlName="documento"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group" *ngIf="tipoPersona == 1">
+                      <p>
+                        CIF
+                        <span *ngIf="userForm.hasError('required', 'documento')"
+                          >*</span
+                        >
+                      </p>
+                      <span class="icon-case"
+                        ><i class="fa fa-id-badge"></i
+                      ></span>
+                      <input
+                        type="text"
+                        name="documento"
+                        id="documento"
+                        formControlName="documento"
+                      />
+                      <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <p>
+                        Email
+                        <span *ngIf="userForm.hasError('required', 'email')"
+                          >*</span
+                        >
+                      </p>
+                      <span class="icon-case"
+                        ><i class="fa fa-envelope-o"></i
+                      ></span>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        formControlName="email"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                  <div class="rightcontact">
+                    <div class="form-group">
+                      <p>Calle</p>
+                      <span class="icon-case"
+                        ><i class="fa fa-street-view"></i
+                      ></span>
+                      <input
+                        type="text"
+                        name="calle"
+                        id="calle"
+                        formControlName="calle"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                      <p>Número</p>
+                      <span class="icon-case"><i class="fa fa-home"></i></span>
+                      <input
+                        type="number"
+                        name="numero"
+                        id="numero"
+                        formControlName="numero"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                      <p>Planta</p>
+                      <span class="icon-case"><i class="fa fa-hotel"></i></span>
+                      <input
+                        type="number"
+                        name="planta"
+                        id="planta"
+                        formControlName="planta"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                      <p>Puerta</p>
+                      <span class="icon-case"><i class="fa fa-flag"></i></span>
+                      <input
+                        type="text"
+                        name="puerta"
+                        id="puerta"
+                        formControlName="puerta"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                      <p>Comunidad</p>
+                      <span class="icon-case"><i class="fa fa-map"></i></span>
+                      <select
+                        type="text"
+                        name="comunidad"
+                        id="comunidad"
+                        formControlName="comunidad"
+                        (change)="selectComunidad($event.target.value)"
+                      >
+                        <option
+                          *ngFor="let comunidad of comunidades"
+                          value="{{ comunidad }}"
+                          >{{ comunidad }}
+                        </option>
+                      </select>
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                      <p>Provincia</p>
+                      <span class="icon-case"
+                        ><i class="fa fa-building"></i
+                      ></span>
+                      <select
+                        type="text"
+                        name="provincia"
+                        id="provincia"
+                        formControlName="provincia"
+                      >
+                        <option
+                          *ngFor="let provincia of provincias"
+                          value="{{ provincia }}"
+                        >
+                          {{ provincia }}
+                        </option>
+                      </select>
+                      <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                      <p>Pueblo</p>
+                      <span class="icon-case"><i class="fa fa-road"></i></span>
+                      <input
+                        type="text"
+                        name="pueblo"
+                        id="pueblo"
+                        formControlName="pueblo"
+                      />
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="button-save"
+                  [disabled]="!userForm.valid"
+                  (click)="modal.close(!userForm.valid)"
+                >
+                  Guardar
+                </button>
+              </form>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-template>
+  <a class="button" href="#" role="button" (click)="open(item)">
+    <span>Nuevo usuario</span>
+    <div class="icon">
+      <i class="fa fa-plus"></i>
+    </div>
+  </a>
+</div>
