@@ -31,4 +31,4 @@ _Las herramientas que he utilizado para crear este proyecto son:_
 ## Expresiones de Gratitud
 
 - Comenta a otros sobre este proyecto
-- Si tiene algun comentario o ayuda estoy aprendiendo. Las criticas constructivas siempre son buenas
+- Si tienes algún comentario te lo agradecería porque estoy aprendiendo. Las críticas constructivas siempre son buenas
