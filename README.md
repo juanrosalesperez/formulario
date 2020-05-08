@@ -1,6 +1,6 @@
 # Formulario Angular
 
-_Formulario con selector multiple y condicionado. Guardado de registro en LocalStorage_
+_Formulario con selector múltiple y condicionado. Guardado de registro en LocalStorage_
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
@@ -15,14 +15,14 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 Clic en http://localhost/
 
-## Construido con 🛠️
+## Construcción
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_Las herramientas que he utilizado para crear este proyecto son:_
 
 - [Angular](https://cli.angular.io/) - El framework web usado
 - [Docker](http://www.docker.io) - Usado para realizar contenedor
 
-## Autor ✒️
+## Autor
 
 - **Juan Antonio Rosales**
   [Github](https://github.com/juanrosalesperez)
@@ -30,5 +30,5 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Expresiones de Gratitud
 
-- Comenta a otros sobre este proyecto 📢
+- Comenta a otros sobre este proyecto
 - Si tiene algun comentario o ayuda estoy aprendiendo. Las criticas constructivas siempre son buenas
