@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "atrinium-form": {
+    "form-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/atrinium-form",
+            "outputPath": "dist/form-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -54,8 +54,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "250kb",
+                  "maximumError": "500kb"
                 }
               ]
             }
@@ -64,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "atrinium-form:build"
+            "browserTarget": "form-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "atrinium-form:build:production"
+              "browserTarget": "form-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "atrinium-form:build"
+            "browserTarget": "form-angular:build"
           }
         },
         "test": {
@@ -108,16 +108,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "atrinium-form:serve"
+            "devServerTarget": "form-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "atrinium-form:serve:production"
+              "devServerTarget": "form-angular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "atrinium-form"
+  "defaultProject": "form-angular"
 }
