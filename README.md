@@ -10,8 +10,8 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 ### Instalación
 
-docker build -t form-angular:latest .
-docker run -d -p 80:80 form-angular:latest
+- docker build -t form-angular:latest .
+- docker run -d -p 80:80 form-angular:latest
 
 Clic en http://localhost/
 
