@@ -25,8 +25,8 @@ _Las herramientas que he utilizado para crear este proyecto son:_
 ## Autor
 
 - **Juan Antonio Rosales**
-  [Github](https://github.com/juanrosalesperez)
-  [LindkeIn](https://www.linkedin.com/in/juan-antonio-rosales-perez/)
+- [Github](https://github.com/juanrosalesperez)
+- [LindkeIn](https://www.linkedin.com/in/juan-antonio-rosales-perez/)
 
 ## Expresiones de Gratitud
 
